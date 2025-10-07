@@ -1,0 +1,5 @@
+{
+  "name": "Buscador de Películas por Nacimiento",
+  "description": "Encuentra la película más popular del mes y año en que naciste.",
+  "requestFramePermissions": []
+}
