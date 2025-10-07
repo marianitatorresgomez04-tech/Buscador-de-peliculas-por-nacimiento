@@ -1,8 +1,8 @@
 :root {
     --background-color: #121212;
     --surface-color: #1e1e1e;
-    --primary-color: #bb86fc;
-    --primary-variant-color: #3700b3;
+    --primary-color: #ff6b6b; /* Rojo suave */
+    --primary-variant-color: #d9534f; /* Rojo más oscuro */
     --secondary-color: #03dac6;
     --on-surface-color: #ffffff;
     --text-color: rgba(255, 255, 255, 0.87);
@@ -92,7 +92,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 button {
     background-color: var(--primary-color);
-    color: var(--background-color);
+    color: #000000;
     border: none;
     border-radius: var(--border-radius);
     padding: 0.8rem 1.5rem;
@@ -103,7 +103,7 @@ button {
 }
 
 button:hover, button:focus {
-    background-color: #a764fa;
+    background-color: #f06060; /* Tono de rojo más oscuro para hover */
     transform: translateY(-2px);
     outline: 2px solid var(--primary-color);
     outline-offset: 2px;
