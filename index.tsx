@@ -15,6 +15,14 @@ if (!form || !birthdateInput || !loader || !resultContainer) {
     throw new Error("No se encontraron los elementos del DOM requeridos.");
 }
 
+// Establecer la fecha máxima en el selector de fecha a hoy para prevenir fechas futuras
+const today = new Date();
+const yyyy = today.getFullYear();
+const mm = String(today.getMonth() + 1).padStart(2, '0'); // Los meses son base 0
+const dd = String(today.getDate()).padStart(2, '0');
+const todayString = `${yyyy}-${mm}-${dd}`;
+birthdateInput.max = todayString;
+
 // Inicializar el cliente de GoogleGenAI
 const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
 
@@ -70,6 +78,13 @@ form.addEventListener('submit', async (event) => {
     if (!birthdateValue) {
         resultContainer.style.display = 'block';
         resultContainer.innerHTML = `<p>Por favor, selecciona una fecha.</p>`;
+        return;
+    }
+
+    // Validar que la fecha no sea en el futuro (refuerzo para el atributo max)
+    if (birthdateValue > todayString) {
+        resultContainer.style.display = 'block';
+        resultContainer.innerHTML = `<p>Por favor, selecciona una fecha en el pasado.</p>`;
         return;
     }
 
