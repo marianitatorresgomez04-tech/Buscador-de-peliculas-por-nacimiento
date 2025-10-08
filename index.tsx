@@ -24,7 +24,8 @@ const todayString = `${yyyy}-${mm}-${dd}`;
 birthdateInput.max = todayString;
 
 // Inicializar el cliente de GoogleGenAI
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+const ai = new GoogleGenAI({ apiKey: import.meta.env.VITE_API_KEY });
+
 
 // Definir el esquema de respuesta JSON esperado del modelo
 const responseSchema = {
