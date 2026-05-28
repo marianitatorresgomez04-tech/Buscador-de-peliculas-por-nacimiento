@@ -132,6 +132,8 @@ form.addEventListener('submit', async (event) => {
     } catch (error) {
         console.error("Error al obtener datos de la película:", error);
         resultContainer.innerHTML = `<p>Lo siento, no pude encontrar una película para esa fecha. Por favor, intenta con otra.</p>`;
+        resultContainer.style.display = 'block';
+        loader.classList.add('hidden');
     } finally {
         // Ocultar el cargador y mostrar el contenedor de resultados (si no se mostraron ya)
         loader.classList.add('hidden');
