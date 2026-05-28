@@ -1,7 +1,7 @@
 /**
  * @license
  * SPDX-License-Identifier: Apache-2.0
-*/
+ */
 import { GoogleGenAI, Type } from '@google/genai';
 
 // Referencias a elementos del DOM
@@ -110,7 +110,7 @@ form.addEventListener('submit', async (event) => {
     resultContainer.innerHTML = '';
 
     try {
-        const prompt = `¿Cuál fue la película más famosa y culturalmente significativa estrenada en ${month} de ${year}? Proporciona el título de la película, una breve descripción de dos frases, y una lista de 1 a 2 películas populares alternativas de ese mismo mes y año.`;
+        const prompt = `¿Cuál fue la película más famosa y culturalmente significativa estrenada en ${month} de ${year}? Proporciona el título de la película, una breve descripción de dos o tres líneas, y 1 a 2 películas alternativas populares del mismo mes y año.`;
 
         // Generar contenido con el esquema JSON especificado
         const response = await ai.models.generateContent({
